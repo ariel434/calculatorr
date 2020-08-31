@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="calculator card">
+            <input id="textLine" type="text" class="calculator-screen z-depth-1" value="" disabled />
+        
+        <div class="calculator-keys">
+            <button name="style" id="Divain" class="operator btn btn-info" onclick="value='/';onClick(value);"> /</button>
+            <button name="style" id="Multi" class="operator btn btn-info" onclick="value='*';onClick(value);">* </button>
+            <button id="Minus" onclick="  value='-';onClick(value);" class="operator btn btn-info">-</button>
+            <button id="Plus" onclick="value='+';onClick(value);" class="operator btn btn-info">+</button>
+
+            <button id="7" class="btn btn-light waves-effect" onclick="textLine.value+='7';">7</button>
+            <button id="8" class="btn btn-light waves-effect" onclick="textLine.value+='8';">8</button>
+            <button id="9" class="btn btn-light waves-effect" onclick="textLine.value+='9';">9</button>
+
+           
+
+            <button id="4" class="btn btn-light waves-effect" class="operator btn btn-info" onclick="textLine.value+='4';">4</button>
+            <button id="5" class="btn btn-light waves-effect" class="operator btn btn-info" onclick="textLine.value+='5';">5</button>
+            <button id="6" class="btn btn-light waves-effect" class="operator btn btn-info" onclick="textLine.value+='6';">6</button>
+
+            <button id="1" class="btn btn-light waves-effect" class="operator btn btn-info"
+                onclick="textLine.value+='1';">1</button>
+            <button id="2" class="btn btn-light waves-effect" class="operator btn btn-info"
+                onclick="textLine.value+='2';">2</button>
+            <button id="3" class="btn btn-light waves-effect" class="operator btn btn-info"
+                onclick="textLine.value+='3';">3</button>
+
+            
+
+            <button id="0" onclick="textLine.value+='0';">0</button>
+            <button name="style" onclick="textLine.value=''" class="all-clear function btn btn-danger btn-sm">C</button>
+           
+            <button onclick="Equle(textLine.value)" class="equal-sign operator btn btn-default">=</button>
+           
+    <script>
+        
+        var Action = "";
+        var Num = 0;
+        function onClick(value) {
+            Num = parseInt(textLine.value);
+            Action = value;
+            textLine.value = "";
+        }
+        function Equle(Num2) {
+            if (Action == "*") {
+                textLine.value = Num * parseInt(Num2);
+            }
+
+            if (Action == "+") {
+                textLine.value = Num + parseInt(Num2);
+            }
+
+            if (Action == "-") {
+                textLine.value = Num - parseInt(Num2);
+            }
+
+            if (Action == "/") {
+                textLine.value = Num / parseInt(Num2);
+            }
+        }
+        function Big() {
+            document.getElementById("text").style.fontSize = "150px";
+        }
+        function Small() {
+            document.getElementById("text").style.fontSize = "10px";
+        }
+        function Normal() {
+            document.getElementById("text").style.fontSize = "30px";
+        }
+        function Red() {
+            document.getElementById("Plus").style.color;
+        }
+    </script>
+</body>
+
+</html>
